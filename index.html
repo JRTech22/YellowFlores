@@ -3,74 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi amor</title>
+    <title>Mi amor, Elianny</title>
     <style>
-        body, html {
+        /* Estilo básico y reinicio de márgenes */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
             height: 100%;
             width: 100%;
+            font-family: 'Comic Sans MS', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1, #ff8c00);
+            background-size: 200% 200%;
+            animation: gradientBG 8s ease infinite;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('img/amar.png') no-repeat center center/cover;
-            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de partículas de corazones flotantes */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://as2.ftcdn.net/v2/jpg/05/54/15/21/1000_F_554152146_fQfdcNIvw7MqTOe7dH1WWJNYrx00Fpbx.webp') repeat;
+            opacity: 0.5;
+            z-index: 1;
+            animation: floatHearts 20s linear infinite;
+        }
+
+        @keyframes floatHearts {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 10000px 10000px;
+            }
         }
 
         h1, h2 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-shadow: 4px 4px 20px rgba(255, 255, 255, 0.8), 0 0 20px #ff33cc;
             text-align: center;
         }
 
         h1 {
-            font-size: 8vw;
-            animation: fadeInOut 3s infinite; /* Animación suave */
+            font-size: 7vw;
+            animation: neonText 2s infinite alternate;
         }
 
         h2 {
-            font-size: 4vw;
+            font-size: 3.5vw;
             margin-top: 20px;
-            animation: pulse 2s infinite; /* Pequeño efecto de pulsación */
+            animation: bounce 3s infinite;
         }
 
-        button {
-            font-size: 3vw;
-            padding: 15px 30px;
-            margin-top: 30px;
-            border: none;
-            margin-left: 200px;
-            background-color: #ff3366;
-            color: white;
-            cursor: pointer;
-            border-radius: 50px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        /* Centrar el contenedor completo */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
         }
 
-        @keyframes fadeInOut {
+        /* Botón redondeado con efectos llamativos */
+      /* Botón redondeado con efectos llamativos y emojis */
+.rounded-button {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #ff3366;
+    color: #fff;
+    font-size: 2vw;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.7), 0 0 20px #ff66cc;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.rounded-button:hover {
+    transform: scale(1.1);
+    background-color: #ff6699;
+    box-shadow: 0 0 40px rgba(255, 102, 153, 0.9), 0 0 30px #ff99cc;
+}
+
+/* Texto de pista pequeño */
+.hint-text {
+    font-size: 1.5vw;
+    color: #ffccff;
+    text-shadow: 0 0 10px #ff99cc;
+    display: block;
+    margin-top: 10px;
+    opacity: 0.8;
+    animation: hintBlink 1.5s infinite alternate;
+}
+
+/* Efecto de parpadeo para el texto de pista */
+@keyframes hintBlink {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+        @keyframes neonText {
+            0% {
+                text-shadow: 0 0 10px #ff33cc, 0 0 20px #ff33cc, 0 0 30px #ff33cc;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff66cc, 0 0 40px #ff66cc, 0 0 60px #ff66cc;
+            }
+        }
+
+        @keyframes bounce {
             0%, 100% {
-                opacity: 0.8;
+                transform: translateY(0);
             }
             50% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
+                transform: translateY(-10px);
             }
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>MI AMOR(●'◡'●)💕</h1>
-        <h2>Tengo un regalo para ti✍(◔◡◔)</h2>
-        <button onclick="window.location.href='rosas.html'">Ver regalo☞💛</button>
+    <div class="content-container">
+        <h1>MI AMOR Elianny (●'◡'●)💕</h1>
+        <h2>Tengo un regalo para ti ✍(◔◡◔)</h2>
+        <button class="rounded-button" onclick="window.location.href='rosas.html'">
+            🎁 ¡Abrir Regalo! 🎉<br>
+            <span class="hint-text">✨ ¿Qué habrá adentro? ✨</span>
+        </button>
+        
     </div>
 </body>
 </html>

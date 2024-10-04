@@ -1983,3 +1983,40 @@ body {
     opacity: 1;
   }
 }
+
+
+.message-card {
+    display: none; /* Oculto por defecto */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con transparencia */
+    border-radius: 15px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    animation: scale-up 0.5s forwards; /* Animación de escalado */
+}
+
+.message {
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0.5); /* Inicia en tamaño reducido */
+        opacity: 0; /* Comienza invisible */
+    }
+    50% {
+        opacity: 1; /* Se vuelve visible a la mitad de la animación */
+    }
+    100% {
+        transform: scale(1); /* Termina en tamaño normal */
+    }
+}
+
+@keyframes scale-down {
+    0% {
+        transform: scale(1); /* Inicia en tamaño normal */
+    }
+    100% {
+        transform: scale(0.5); /* Termina en tamaño reducido */
+    }
+}
